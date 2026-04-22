@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 11B CIKIDANG | ASIK</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #00ffcc;
+            --secondary: #00d2ff;
+            --pondok: #ffcc00;
+            --dark: #050a10;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; background: var(--dark); color: white; overflow-x: hidden; }
+
+        /* --- RUNNING TEXT --- */
+        .announcement {
+            background: linear-gradient(to right, #004e92, #000428);
+            padding: 10px 0; font-size: 12px; font-weight: 600;
+            position: fixed; top: 60px; width: 100%; z-index: 999;
+            border-bottom: 1px solid var(--primary);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1001;
+            background: rgba(5, 10, 16, 0.95); backdrop-filter: blur(15px);
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-family: 'Montserrat'; font-weight: 800; color: var(--primary); font-size: 20px; }
+
+        /* --- HERO --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://i.pinimg.com/1200x/c3/7c/fb/c37cfb14572bdc05b0c4cd83307e533a.jpg') no-repeat center center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+        .hero h1 { font-size: clamp(2.5rem, 10vw, 5rem); font-family: 'Montserrat'; line-height: 1; }
+        .hero span { color: var(--primary); }
+        .quote { font-style: italic; opacity: 0.7; margin: 20px 0; font-size: 14px; max-width: 500px; }
+
+        /* --- SECTION --- */
+        section { padding: 120px 10% 60px; }
+        .title { text-align: center; margin-bottom: 50px; }
+        .title h2 { font-family: 'Montserrat'; font-size: 2.5rem; color: var(--secondary); }
+
+        /* --- GRID MAPEL --- */
+        .mapel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .mapel-card {
+            background: rgba(255,255,255,0.05); padding: 25px; border-radius: 20px;
+            border-left: 5px solid var(--primary); transition: 0.3s;
+        }
+        .mapel-card:hover { background: rgba(255,255,255,0.1); transform: translateX(10px); }
+        .mapel-card i { font-size: 30px; margin-bottom: 15px; color: var(--pondok); }
+
+        /* --- DATABASE TABLE --- */
+        .search-bar { width: 100%; max-width: 500px; margin: 0 auto 30px; position: relative; }
+        .search-bar input {
+            width: 100%; padding: 15px 20px 15px 50px; border-radius: 50px;
+            background: rgba(0,0,0,0.5); border: 1px solid var(--primary); color: white;
+        }
+        .search-bar i { position: absolute; left: 20px; top: 18px; color: var(--primary); }
+
+        .t-wrap { background: rgba(255,255,255,0.03); border-radius: 20px; overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: rgba(0, 255, 204, 0.1); padding: 20px; color: var(--primary); text-align: left; font-size: 12px; }
+        td { padding: 18px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+        /* --- FORM --- */
+        .form-box {
+            background: rgba(255,255,255,0.05); padding: 40px; border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.1); max-width: 600px; margin: 0 auto;
+        }
+        select, input {
+            width: 100%; padding: 15px; margin-bottom: 20px; border-radius: 12px;
+            background: #000; border: 1px solid #333; color: white;
+        }
+        .btn {
+            width: 100%; padding: 15px; border-radius: 12px; border: none;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: #000; font-weight: 800; cursor: pointer; transition: 0.3s;
+        }
+        .btn:hover { box-shadow: 0 0 20px var(--primary); transform: scale(1.02); }
+
+        footer { padding: 50px; text-align: center; font-size: 12px; opacity: 0.5; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">11B_<span>CIKIDANG</span></div>
+        <ul style="display: flex; list-style: none; gap: 20px; font-size: 12px;">
+            <li><a href="#home" style="color: white; text-decoration: none;">HOME</a></li>
+            <li><a href="#pelajaran" style="color: white; text-decoration: none;">MAPEL</a></li>
+            <li><a href="#siswa" style="color: white; text-decoration: none;">DATABASE</a></li>
+        </ul>
+    </nav>
+
+    <div class="announcement">
+        <marquee>Info : ARFA IMOET = dev.</marquee>
+    </div>
+
+    <section class="hero" id="home">
+        <div data-aos="zoom-in">
+            <h1>KELAS <span>11B</span></h1>
+            <h2 style="font-family: 'Montserrat'; font-size: 2rem;">ANAK CIKIDANG 11B</h2>
+            <p class="quote">"Man Jadda Wajada - Siapa yang bersungguh-sungguh, maka ia akan berhasil."</p>
+            <a href="#absen" class="btn" style="width: 250px; text-decoration: none; display: inline-block; padding: 15px;">E-ABSENSI</a>
+        </div>
+    </section>
+
+    <section id="pelajaran">
+        <div class="title" data-aos="fade-up">
+            <h2>Kurikulum Terpadu</h2>
+            <p style="opacity: 0.6;">Integrasi Sains, IT, dan Ilmu Agama</p>
+        </div>
+        <div class="mapel-grid">
+            <div class="mapel-card" data-aos="fade-right">
+                <i class="fa-solid fa-code"></i>
+                <h3>Informatika</h3>
+                <p>C++, Python, & Web Dev</p>
+            </div>
+            <div class="mapel-card" data-aos="fade-right" data-aos-delay="100">
+                <i class="fa-solid fa-book-quran"></i>
+                <h3>Shorof & Nahwu</h3>
+                <p>Kaidah Bahasa Arab</p>
+            </div>
+            <div class="mapel-card" data-aos="fade-right" data-aos-delay="200">
+                <i class="fa-solid fa-scroll"></i>
+                <h3>Fiqih & Aqidah</h3>
+                <p>Tuntunan Ibadah & Tauhid</p>
+            </div>
+            <div class="mapel-card" data-aos="fade-right" data-aos-delay="300">
+                <i class="fa-solid fa-landmark"></i>
+                <h3>Sejarah</h3>
+                <p>Erlangga Kurikulum Merdeka</p>
+            </div>
+            <div class="mapel-card" data-aos="fade-right" data-aos-delay="400">
+                <i class="fa-solid fa-calculator"></i>
+                <h3>Matematika</h3>
+                <p>Logika & Numerasi</p>
+            </div>
+            <div class="mapel-card" data-aos="fade-right" data-aos-delay="500">
+                <i class="fa-solid fa-pen-nib"></i>
+                <h3>Hadits</h3>
+                <p>Kajian Kitab Kuning</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="siswa" style="background: rgba(0,210,255,0.02);">
+        <div class="title" data-aos="fade-up">
+            <h2>Database 11B</h2>
+            <div class="search-bar">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="searchInp" onkeyup="cariSiswa()" placeholder="Cari nama anggota 11B...">
+            </div>
+        </div>
+        <div class="t-wrap" data-aos="fade-up">
+            <table id="tabel11b">
+                <thead>
+                    <tr>
+                        <th>ID_REG</th>
+                        <th>NAMA LENGKAP</th>
+                        <th>KATEGORI</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>CKD-01</td><td><strong>Daffa Alfatih</strong></td><td>DEVELOPER</td><td><span style="color:var(--primary)">ONLINE</span></td></tr>
+                    <tr><td>CKD-02</td><td><strong>Farhan Fauzan</strong></td><td>???????</td><td><span style="color:var(--primary)">OFFLINE</span></td></tr>
+                    <tr><td>CKD-03</td><td><strong>Mukhlas Yusuf Andito</strong></td><td>ANDI</td><td><span style="color:var(--primary)">OFFLINE</span></td></tr>
+                    <tr><td>CKD-04</td><td><strong>Bachtiar Nur Ikhsan</strong></td><td>KETUA KELAS</td><td><span style="color:var(--primary)">OFFLINE</span></td></tr> 
+                    <tr><td>CKD-04</td><td><strong>Muhammad Sultan Attari</strong></td><td>TEGUH</td><td><span style="color:var(--primary)">OFFLINE</span></td></tr>  
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="absen">
+        <div class="title" data-aos="fade-up">
+            <h2>Portal Absensi</h2>
+        </div>
+        <div class="form-box" data-aos="zoom-in">
+            <form action="https://formspree.io/f/xkokrlwa" method="POST">
+                <input type="text" name="Nama" placeholder="Nama Santri" required>
+                <select name="Mapel">
+                    <option>Shorof (Derivasi)</option>
+                    <option>Nahwu (Kaidah)</option>
+                    <option>Fiqih (Ibadah)</option>
+                    <option>Informatika (Coding)</option>
+                    <option>Sejarah (Umum)</option>
+                    <option>Matematika</option>
+                    <option>Matematika Lanjutan</option>
+                    <option>Geografi</option>
+                    <option>Ekonomi</option>
+                    <option>Sosiologi</option>
+                </select>
+                <select name="Kehadiran">
+                    <option>Hadir di Kelas</option>
+                    <option>Izin Sakit</option>
+                    <option>Izin Pulang/Keperluan</option>
+                </select>
+                <button type="submit" class="btn">KIRIM DATA KEHADIRAN</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; WEB ANAK 11B CIKIDANG. <br> Daffa Al-Fatih.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        function cariSiswa() {
+            let input = document.getElementById("searchInp").value.toUpperCase();
+            let tr = document.getElementById("tabel11b").getElementsByTagName("tr");
+            for (let i = 1; i < tr.length; i++) {
+                let td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    let text = td.textContent || td.innerText;
+                    tr[i].style.display = text.toUpperCase().indexOf(input) > -1 ? "" : "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html> 
